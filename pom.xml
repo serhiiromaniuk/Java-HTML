@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.techprimers.testing</groupId>
-    <artifactId>maven-jenkins-example</artifactId>
+    <artifactId>2-maven-jenkins-example</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
@@ -59,14 +59,14 @@
     <repositories>
         <repository>
             <id>myMavenRepo.read</id>
-            <url>https://mymavenrepo.com/repo/FN8PIshHk5uALNhkXbhs/</url>
+            <url>https://mymavenrepo.com/repo/m0p3EpK95ThK3tfuA9ni/</url>
         </repository>
     </repositories>
 
     <distributionManagement>
         <repository>
             <id>myMavenRepo.write</id>
-            <url>https://mymavenrepo.com/repo/9Q8JoRpymi4UGK8HzbVq/</url>
+            <url>https://mymavenrepo.com/repo/RbgQaqDpf6p2sKWEP4Ar/</url>
         </repository>
     </distributionManagement>
 
