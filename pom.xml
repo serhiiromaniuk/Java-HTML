@@ -78,55 +78,6 @@ under the License.
     </site>
   </distributionManagement>
 
-<!--   
-<properties>
-    <mavenVersion>3.0</mavenVersion>
-    <javaVersion>8</javaVersion>
-    <!-- for dependencies -->
-<!--     <doxiaVersion>1.8</doxiaVersion> -->
-<!--     <doxiaSitetoolsVersion>1.8.1</doxiaSitetoolsVersion> -->
-<!--     <jettyVersion>9.4.12.v20180830</jettyVersion>
-    <plexusVersion>1.5.4</plexusVersion>
-    <scmVersion>1.4</scmVersion>
-    <wagonVersion>3.3.1</wagonVersion> -->
-    <!-- for ITs -->
-<!--     <checkstylePluginVersion>2.9.1</checkstylePluginVersion>
-    <javadocPluginVersion>3.0.1</javadocPluginVersion>
-    <pmdPluginVersion>3.11.0</pmdPluginVersion>
-    <projectInfoReportsPluginVersion>2.7</projectInfoReportsPluginVersion>
-    <surefirePluginVersion>2.22.1</surefirePluginVersion> -->
-<!--   </properties>--> --> 
-<!-- 
-  <dependencies>
-    <!-- exclude obsolete runtime artifact included by transitive dependencies (pulled by doxia-site-renderer) -->
-<!--     <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.1</version>
-      <exclusions>
-        <exclusion>
-          <groupId>javax.servlet</groupId>
-          <artifactId>servlet-api</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency> -->
-<!-- 
-    <dependency>
-      <groupId>org.apache.maven.reporting</groupId>
-      <artifactId>maven-reporting-api</artifactId>
-      <version>3.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven.reporting</groupId>
-      <artifactId>maven-reporting-exec</artifactId>
-      <version>1.4</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven.shared</groupId>
-      <artifactId>maven-shared-utils</artifactId>
-      <version>3.1.0</version>
-    </dependency>  -->
-  -->
 
     <!-- Maven -->
     <dependency>
@@ -177,100 +128,9 @@ under the License.
       <groupId>org.apache.maven.plugin-tools</groupId>
       <artifactId>maven-plugin-annotations</artifactId>
     </dependency>
-<!-- /
 
-    <!-- Wagon -->
-<!--     <dependency>
-      <groupId>org.apache.maven.wagon</groupId>
-      <artifactId>wagon-provider-api</artifactId>
-      <version>${wagonVersion}</version>
-    </dependency>
 
-    <dependency>
-      <groupId>org.apache.maven.wagon</groupId>
-      <artifactId>wagon-webdav-jackrabbit</artifactId>
-      <version>${wagonVersion}</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-nop</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency> -->
-<!-- 
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-server</artifactId>
-      <version>${jettyVersion}</version>
-    </dependency>
 
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-servlet</artifactId>
-      <version>${jettyVersion}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-webapp</artifactId>
-      <version>${jettyVersion}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-util</artifactId>
-      <version>${jettyVersion}</version>
-    </dependency>
-<!--  -->
-<!--     <dependency>
-      <groupId>org.eclipse.jetty</groupId> --> -->
-<!--       <artifactId>jetty-client</artifactId>
-      <version>${jettyVersion}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-proxy</artifactId>
-      <version>${jettyVersion}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.5.3</version>
-      <scope>test</scope> -->
-<!--     </dependency>
-
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <version>1.5.3</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>jcl-over-slf4j</artifactId>
-      <version>1.6.1</version>
-      <scope>test</scope>
-    </dependency> -->
-
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.4</version>
-    </dependency>
-
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.5</version>
-    </dependency> -->
-
-    <!-- test -->
     <dependency>
       <groupId>org.apache.maven.plugin-testing</groupId>
       <artifactId>maven-plugin-testing-harness</artifactId>
