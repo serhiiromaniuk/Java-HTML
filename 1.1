@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.akquinet.innovation.maven</groupId>
+    <artifactId>maven-site-tutorial</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>Maven Site Tutorial</name>
+
+    <modules>  <module>fluido-site</module> </modules>
+
+    <scm>
+        <connection>scm:git:git@github.com:akquinet/maven-site-tutorial.git</connection>
+        <url>https://github.com/akquinet/maven-site-tutorial</url>
+        <developerConnection>scm:git:git@github.com:akquinet/maven-site-tutorial.git</developerConnection>
+    </scm>
+    
+ <repositories>
+        <repository>
+            <id>myMavenRepo.read</id>
+            <url>https://mymavenrepo.com/repo/m0p3EpK95ThK3tfuA9ni/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>myMavenRepo.write</id>
+            <url>https://mymavenrepo.com/repo/RbgQaqDpf6p2sKWEP4Ar/</url>
+        </repository>
+    </distributionManagement>
+</project>
