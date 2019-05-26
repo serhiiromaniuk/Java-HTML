@@ -1,127 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-<!--
-Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
-distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
-to you under the Apache License, Version 2.0 (the
-"License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
-  http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing,
-software distributed under the License is distributed on an
-"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
-specific language governing permissions and limitations
-under the License.
--->
-
-<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd"
-  name="Apache Maven">
-
-
-    <groupId>com.techprimers.testing</groupId>
-    <artifactId>2-maven-jenkins-example</artifactId>
+    <groupId>de.akquinet.innovation.maven</groupId>
+    <artifactId>maven-site-tutorial</artifactId>
     <version>1.0-SNAPSHOT</version>
-  <bannerLeft>
 
+    <packaging>pom</packaging>
+
+    <name>Maven Site Tutorial</name>
+
+    <modules>  <module>fluido-site</module> </modules>
+
+    <scm>
+        <connection>scm:git:git@github.com:akquinet/maven-site-tutorial.git</connection>
+        <url>https://github.com/akquinet/maven-site-tutorial</url>
+        <developerConnection>scm:git:git@github.com:akquinet/maven-site-tutorial.git</developerConnection>
+    </scm>
     
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <junit.jupiter.version>5.0.0-M3</junit.jupiter.version>
-        <junit.platform.version>1.0.0-M3</junit.platform.version>
-    </properties>
-
-    <name>${project.name}</name>
-    <src>https://maven.apache.org/images/apache-maven-project.png</src>
-    <href>https://maven.apache.org/</href>
-  </bannerLeft>
-
-  <edit>${project.scm.url}</edit>
-
-  
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>1.0.0-M3</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        </plugins>
-    
-
-
-  <body>
-    <breadcrumbs>
-      <item name="Ref" href="../" />
-      <item name="Maven ${project.version}" href="./" />
-    </breadcrumbs>
-
-    <menu name="Overview">
-      <item name="Introduction" href="index.html"/>
-      <item name="JavaDocs" href="apidocs/index.html"/>
-      <item name="Source Xref" href="xref/index.html"/>
-      <!--item name="FAQ" href="faq.html"/-->
-      <item name="License" href="http://www.apache.org/licenses/"/>
-      <item name="Download" href="/download.html"/>
-    </menu>
-
-    <menu name="Descriptors Reference">
-      <item name="POM" href="./maven-model/maven.html"/>
-      <item name="Settings" href="./maven-settings/settings.html"/>
-      <item name="Toolchains" href="./maven-core/toolchains.html"/>
-    </menu>
-
-    <menu name="Reference">
-      <item name="Lifecycles" href="./maven-core/lifecycles.html"/>
-      <item name="Plugin Bindings to Default Lifecycle" href="./maven-core/default-bindings.html"/>
-      <item name="Artifact Handlers" href="./maven-core/artifact-handlers.html"/>
-      <item name="CLI options" href="./maven-embedder/cli.html"/>
-    </menu>
-
-    <menu name="Development">
-      <item name="Maven Developer Centre" href="../../developers/index.html"/>
-      <item name="Maven Core ITs" href="../../core-its/index.html"/>
-    </menu>
-
-    <menu ref="modules"/>
-    <menu ref="reports"/>
-  </body>
-</build>
-
-<dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.0.0-M3</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-runner</artifactId>
-            <version>${junit.platform.version}</version>
-        </dependency>
-
-    </dependencies>
-
-    <repositories>
+ <repositories>
         <repository>
             <id>myMavenRepo.read</id>
             <url>https://mymavenrepo.com/repo/m0p3EpK95ThK3tfuA9ni/</url>
@@ -134,6 +33,4 @@ under the License.
             <url>https://mymavenrepo.com/repo/RbgQaqDpf6p2sKWEP4Ar/</url>
         </repository>
     </distributionManagement>
-
 </project>
-
