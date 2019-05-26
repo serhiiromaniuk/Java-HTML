@@ -8,9 +8,7 @@ regarding copyright ownership.  The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
-
   http://www.apache.org/licenses/LICENSE-2.0
-
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -38,17 +36,63 @@ under the License.
 
   <contributors>
     <contributor>
-      <name>Yevgeny Nyden</name>
-      <email>yev@curre.net</email>
+      <name>Naoki Nose</name>
+      <email>ikkoan@mail.goo.ne.jp</email>
       <roles>
-        <role>Russian translator</role>
+        <role>Japanese translator</role>
       </roles>
     </contributor>
     <contributor>
-      <name>Daniel Fernández</name>
-      <email>daniel.fernandez.garrido@gmail.com</email>
+      <name>Michael Wechner</name>
+      <email>michael.wechner@wyona.com</email>
       <roles>
-        <role>Galician translator</role>
+        <role>German translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Christian Schulte</name>
+      <email>cs@schulte.it</email>
+      <roles>
+        <role>German translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Piotr Bzdyl</name>
+      <email>piotr@bzdyl.net</email>
+      <roles>
+        <role>Polish translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Domingos Creado</name>
+      <email>dcreado@users.sf.net</email>
+      <roles>
+        <role>Brazilian Portuguese translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>John Allen</name>
+      <email>john_h_allen@hotmail.com</email>
+    </contributor>
+    <contributor>
+      <name>Laszlo Hornyak Kocka</name>
+      <email>laszlo.hornyak@gmail.com</email>
+      <roles>
+        <role>Hungarian translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Hermod Opstvedt</name>
+      <email>hermod.opstvedt@dnbnor.no</email>
+      <roles>
+        <role>Norwegian translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Yue Ni</name>
+      <email>ni2yue4@gmail.com</email>
+      <roles>
+        <role>Chinese translator</role>
       </roles>
     </contributor>
   </contributors>
@@ -78,13 +122,60 @@ under the License.
     </site>
   </distributionManagement>
 
+  <properties>
+    <mavenVersion>3.0</mavenVersion>
+    <javaVersion>8</javaVersion>
+    <!-- for dependencies -->
+    <doxiaVersion>1.8</doxiaVersion>
+    <doxiaSitetoolsVersion>1.8.1</doxiaSitetoolsVersion>
+    <jettyVersion>9.4.12.v20180830</jettyVersion>
+    <plexusVersion>1.5.4</plexusVersion>
+    <scmVersion>1.4</scmVersion>
+    <wagonVersion>3.3.1</wagonVersion>
+    <!-- for ITs -->
+    <checkstylePluginVersion>2.9.1</checkstylePluginVersion>
+    <javadocPluginVersion>3.0.1</javadocPluginVersion>
+    <pmdPluginVersion>3.11.0</pmdPluginVersion>
+    <projectInfoReportsPluginVersion>2.7</projectInfoReportsPluginVersion>
+    <surefirePluginVersion>2.22.1</surefirePluginVersion>
+  </properties>
+
+  <dependencies>
+    <!-- exclude obsolete runtime artifact included by transitive dependencies (pulled by doxia-site-renderer) -->
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1</version>
+      <exclusions>
+        <exclusion>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.reporting</groupId>
+      <artifactId>maven-reporting-api</artifactId>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.reporting</groupId>
+      <artifactId>maven-reporting-exec</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-shared-utils</artifactId>
+      <version>3.1.0</version>
+    </dependency>
 
     <!-- Maven -->
-
+    <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-artifact</artifactId>
       <version>${mavenVersion}</version>
- 
+    </dependency>
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-compat</artifactId>
@@ -129,8 +220,154 @@ under the License.
       <artifactId>maven-plugin-annotations</artifactId>
     </dependency>
 
+ 
+    <!-- Doxia -->
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-sink-api</artifactId>
+      <version>${doxiaVersion}</version>
+    </dependency>
 
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-module-xhtml</artifactId>
+      <version>${doxiaVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-module-apt</artifactId>
+      <version>${doxiaVersion}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-module-xdoc</artifactId>
+      <version>${doxiaVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-module-fml</artifactId>
+      <version>${doxiaVersion}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-module-markdown</artifactId>
+      <version>${doxiaVersion}</version>
+      <scope>runtime</scope>
+    </dependency>
 
+    <!-- Doxia Sitetools -->
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-decoration-model</artifactId>
+      <version>${doxiaSitetoolsVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-site-renderer</artifactId>
+      <version>${doxiaSitetoolsVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-integration-tools</artifactId>
+      <version>${doxiaSitetoolsVersion}</version>
+    </dependency>
+
+    <!-- Wagon -->
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-provider-api</artifactId>
+      <version>${wagonVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-webdav-jackrabbit</artifactId>
+      <version>${wagonVersion}</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-nop</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-server</artifactId>
+      <version>${jettyVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlet</artifactId>
+      <version>${jettyVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-webapp</artifactId>
+      <version>${jettyVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-util</artifactId>
+      <version>${jettyVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-client</artifactId>
+      <version>${jettyVersion}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-proxy</artifactId>
+      <version>${jettyVersion}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.5.3</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.5.3</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>1.6.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.5</version>
+    </dependency>
+
+    <!-- test -->
     <dependency>
       <groupId>org.apache.maven.plugin-testing</groupId>
       <artifactId>maven-plugin-testing-harness</artifactId>
