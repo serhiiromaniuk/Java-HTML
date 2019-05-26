@@ -414,9 +414,6 @@ under the License.
               <filters>
                 <filter>
                   <artifact>org.apache.maven.reporting:maven-reporting-api</artifact>
-                  <includes><!-- class not included in maven-reporting-api from Maven 2.2 -->
-                    <include>**/MavenMultiPageReport.class</include>
-                  </includes>
                 </filter>
                 <filter>
                   <artifact>org.apache.maven:maven-artifact</artifact>
@@ -464,10 +461,7 @@ under the License.
               <filterProperties>
                 <mrm.repository.url>${mrm.repository.url}</mrm.repository.url>
               </filterProperties>
-              <goals>
-                <goal>clean</goal>
-                <goal>${project.groupId}:${project.artifactId}:${project.version}:site</goal>
-              </goals>
+             
               <properties>
                 <maven.compiler.source>${maven.compiler.source}</maven.compiler.source>
                 <maven.compiler.target>${maven.compiler.target}</maven.compiler.target>
@@ -478,14 +472,6 @@ under the License.
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>mrm-maven-plugin</artifactId>
             <version>1.2.0</version>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>start</goal>
-                  <goal>stop</goal>
-                </goals>
-              </execution>
-            </executions>
             <configuration>
               <repositories>
                 <mockRepo>
@@ -517,21 +503,6 @@ under the License.
                 <locale>fr</locale>
                 <locale>gl</locale>
                 <locale>hu</locale>
-                <locale>it</locale>
-                <locale>ja</locale>
-                <locale>ko</locale>
-                <locale>lt</locale>
-                <locale>nl</locale>
-                <locale>no</locale>
-                <locale>pl</locale>
-                <locale>pt</locale>
-                <locale>pt_BR</locale>
-                <locale>ru</locale>
-                <locale>sk</locale>
-                <locale>sv</locale>
-                <locale>tr</locale>
-                <locale>zh_CN</locale>
-                <locale>zh_TW</locale>
               </locales>
             </configuration>
           </plugin>
