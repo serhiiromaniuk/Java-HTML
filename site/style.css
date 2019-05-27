@@ -1,0 +1,47 @@
+body {
+    background-image: url("image.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* margin: 50px auto; */
+    margin-left: 27%;
+}
+
+h1 {
+    color: rgba(0, 0, 0, 0.452);
+}
+
+video {
+    margin-left: -17%;
+    border: 4px solid red;
+    border-radius: 10px;
+}
+
+p,
+audio {
+    color: white;
+    margin-left: 17%;
+}
+
+.a {
+    margin-left: 10%;
+    position: absolute;
+}
+
+.b {
+    margin-left: 20%;
+    position: absolute;
+}
+
+.c {
+    margin-left: 40%;
+    position: relative;
+}
+
+.abc {
+    position: relative;
+    margin-left: 17%;
+    color: black;
+    margin-left: 20%;
+}
