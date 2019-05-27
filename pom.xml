@@ -7,9 +7,7 @@ regarding copyright ownership.  The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
-
   http://www.apache.org/licenses/LICENSE-2.0
-
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -37,17 +35,63 @@ under the License.
 
   <contributors>
     <contributor>
-      <name>Yevgeny Nyden</name>
-      <email>yev@curre.net</email>
+      <name>Naoki Nose</name>
+      <email>ikkoan@mail.goo.ne.jp</email>
       <roles>
-        <role>Russian translator</role>
+        <role>Japanese translator</role>
       </roles>
     </contributor>
     <contributor>
-      <name>Daniel Fernández</name>
-      <email>daniel.fernandez.garrido@gmail.com</email>
+      <name>Michael Wechner</name>
+      <email>michael.wechner@wyona.com</email>
       <roles>
-        <role>Galician translator</role>
+        <role>German translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Christian Schulte</name>
+      <email>cs@schulte.it</email>
+      <roles>
+        <role>German translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Piotr Bzdyl</name>
+      <email>piotr@bzdyl.net</email>
+      <roles>
+        <role>Polish translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Domingos Creado</name>
+      <email>dcreado@users.sf.net</email>
+      <roles>
+        <role>Brazilian Portuguese translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>John Allen</name>
+      <email>john_h_allen@hotmail.com</email>
+    </contributor>
+    <contributor>
+      <name>Laszlo Hornyak Kocka</name>
+      <email>laszlo.hornyak@gmail.com</email>
+      <roles>
+        <role>Hungarian translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Hermod Opstvedt</name>
+      <email>hermod.opstvedt@dnbnor.no</email>
+      <roles>
+        <role>Norwegian translator</role>
+      </roles>
+    </contributor>
+    <contributor>
+      <name>Yue Ni</name>
+      <email>ni2yue4@gmail.com</email>
+      <roles>
+        <role>Chinese translator</role>
       </roles>
     </contributor>
   </contributors>
@@ -175,42 +219,7 @@ under the License.
       <artifactId>maven-plugin-annotations</artifactId>
     </dependency>
 
-    <!-- Plexus -->
-    <dependency>
-      <groupId>org.sonatype.sisu</groupId>
-      <artifactId>sisu-inject-plexus</artifactId>
-      <version>1.4.2</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-archiver</artifactId>
-      <version>3.4</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-i18n</artifactId>
-      <version>1.0-beta-10</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.codehaus.plexus</groupId>
-          <artifactId>plexus-component-api</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-utils</artifactId>
-      <version>3.0.24</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-classworlds</artifactId>
-      <version>2.5.2</version>
-    </dependency>
-
+ 
     <!-- Doxia -->
     <dependency>
       <groupId>org.apache.maven.doxia</groupId>
@@ -393,23 +402,7 @@ under the License.
         <version>1.6</version>
         <executions>
           <execution>
-            <goals>
-              <goal>generate-metadata</goal>
-              <!--goal>generate-test-metadata</goal-->
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>1.4</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
+         
             <configuration>
               <artifactSet>
                 <includes>
@@ -420,9 +413,6 @@ under the License.
               <filters>
                 <filter>
                   <artifact>org.apache.maven.reporting:maven-reporting-api</artifact>
-                  <includes><!-- class not included in maven-reporting-api from Maven 2.2 -->
-                    <include>**/MavenMultiPageReport.class</include>
-                  </includes>
                 </filter>
                 <filter>
                   <artifact>org.apache.maven:maven-artifact</artifact>
@@ -470,10 +460,7 @@ under the License.
               <filterProperties>
                 <mrm.repository.url>${mrm.repository.url}</mrm.repository.url>
               </filterProperties>
-              <goals>
-                <goal>clean</goal>
-                <goal>${project.groupId}:${project.artifactId}:${project.version}:site</goal>
-              </goals>
+             
               <properties>
                 <maven.compiler.source>${maven.compiler.source}</maven.compiler.source>
                 <maven.compiler.target>${maven.compiler.target}</maven.compiler.target>
@@ -484,14 +471,6 @@ under the License.
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>mrm-maven-plugin</artifactId>
             <version>1.2.0</version>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>start</goal>
-                  <goal>stop</goal>
-                </goals>
-              </execution>
-            </executions>
             <configuration>
               <repositories>
                 <mockRepo>
@@ -523,21 +502,6 @@ under the License.
                 <locale>fr</locale>
                 <locale>gl</locale>
                 <locale>hu</locale>
-                <locale>it</locale>
-                <locale>ja</locale>
-                <locale>ko</locale>
-                <locale>lt</locale>
-                <locale>nl</locale>
-                <locale>no</locale>
-                <locale>pl</locale>
-                <locale>pt</locale>
-                <locale>pt_BR</locale>
-                <locale>ru</locale>
-                <locale>sk</locale>
-                <locale>sv</locale>
-                <locale>tr</locale>
-                <locale>zh_CN</locale>
-                <locale>zh_TW</locale>
               </locales>
             </configuration>
           </plugin>
