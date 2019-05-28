@@ -3,6 +3,8 @@ stage('SCM Chechout'){
 git https://github.com/SerhiiRomanuik/NotJava
 }
 stage('Compile-Package')
-sh 'mvn package'
+  //Get maven gome path
+def mvnHome = tool name: 'Default', type: 'maven'
+  sh "${mvnHome}/bin/mvn package"
 }
 }
