@@ -1,0 +1,8 @@
+node{
+stage('SCM Chechout'){
+git https://github.com/SerhiiRomanuik/NotJava
+}
+stage('Compile-Package')
+sh 'mvn package'
+}
+}
